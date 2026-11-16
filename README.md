@@ -139,15 +139,6 @@ All three chips use the standard 14-pin quad-gate pinout. Pin 14 goes to +5 V an
 
 All eight switch combinations were tested in Tinkercad, and D4 matched the truth table in every case.
 
-## Derived figures
-
-These were calculated on paper, not measured.
-
-**Output LED current.** U3 drives D4 at about 5 V through R4. Assuming a red LED drops about 2 V:
-
-$$I_{D4} = \frac{5 - 2}{1000} = 3\ \text{mA}$$
-
-That is within the roughly 4 mA a 74HC output can source at 5 V, so U3 can drive the LED directly. It also explains why 1 kΩ is a sensible value: 220 Ω would ask the gate for about 14 mA.
 
 **Logic depth.** The longest path from a switch to W passes through four gates: inverter → AND → AND → OR. With hand-operated switches, the resulting delay of a few tens of nanoseconds doesn't matter.
 
