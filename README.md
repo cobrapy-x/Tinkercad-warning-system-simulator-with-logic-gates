@@ -153,8 +153,7 @@ That is within the roughly 4 mA a 74HC output can source at 5 V, so U3 can drive
 
 ## Known issues and limitations
 
-- **Output LED wired backwards (fixed).** At first, D4 never lit for any combination. The exported schematic showed the cause: D4's cathode was connected to P1+, while D1–D3 all returned to P1−. Moving the cathode to ground fixed it. AI assistance was used only to find this one wiring error. The logic design, minimisation and the rest of the circuit are my own work.
-- **Unused inputs are left floating.** Floating means the pin is not connected to anything. This affects U1 gate 4, U2 gate 4, and U3 gates 2 and 3. Tinkercad simulates this without problems, but on real CMOS chips floating inputs can drift and draw extra current. On a physical build they should be tied to ground.
+- **Output LED wired backwards (fixed).** At first, D4 never lit for any combination. The exported schematic showed the cause: D4's cathode was connected to P1+, while D1–D3 all returned to P1−. Moving the cathode to ground fixed it. 
 - **Simulation only.** The circuit hasn't been built on a real breadboard.
 - **Day/night is a manual switch.** A real system would need a light sensor with a threshold circuit.
 - **Wasteful chip use.** Three chips are used for eight gates, and five gates sit idle.
@@ -163,7 +162,6 @@ That is within the roughly 4 mA a 74HC output can source at 5 V, so U3 can drive
 
 - The hard part is turning plain-English rules into truth-table rows. After that, the minimisation is mechanical.
 - Factoring AB + AC' into A(B + C') saved a gate. The simplest-looking expression isn't always the cheapest circuit to build.
-- NAND really is universal: when a NOT gate wasn't available, a NAND with its inputs tied together did the job.
 - An LED that never lights, whatever the inputs, usually means a wiring or polarity fault rather than a logic error. Comparing the exported schematic against the intended design is a quick way to find it.
 
 ## Future improvements
